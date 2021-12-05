@@ -18,6 +18,7 @@ if __name__ == "__main__":
     t1 = time.perf_counter()
 
     with concurrent.futures.ProcessPoolExecutor() as executor:
+        ## use concurrent.futures.ThreadPullExecutor to make it multi thread!!
         results = executor.map(process_image, img_names)
         for r in results:
             print(r)
